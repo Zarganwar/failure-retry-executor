@@ -59,7 +59,7 @@ class FailureRetryExecutor
 			}
 		}
 
-		throw new RetryLimitExceededException("Max attempts '{$maxAttempts}' reached without success detected");
+		throw new RetryLimitExceededException("Maximum number of attempts exceeded");
 	}
 
 }
