@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Zarganwar\FailureRetryExecutor;
+namespace Zarganwar\FailureRetryExecutor\Exceptions;
 
 
 use Exception;

@@ -5,6 +5,7 @@ namespace Zarganwar\FailureRetryExecutor;
 
 
 use Throwable;
+use Zarganwar\FailureRetryExecutor\Exceptions\RetryLimitExceededException;
 use function is_bool;
 use function is_callable;
 
