@@ -11,8 +11,6 @@ use function is_callable;
 class FailureRetryExecutor
 {
 
-	public const defaultMaxAttempts = 3;
-
 	/**
 	 * @param callable $command
 	 * @param int $maxAttempts
@@ -24,9 +22,9 @@ class FailureRetryExecutor
 	 */
 	public static function execute(
 		callable $command,
-		int $maxAttempts = self::defaultMaxAttempts,
 		null|callable|bool $onFailure = null,
 		null|callable $onSuccess = null,
+		int $maxAttempts = 3,
 	): void
 	{
 		while ($maxAttempts > 0) {
@@ -46,7 +44,11 @@ class FailureRetryExecutor
 				return;
 			} catch (Throwable $e) {
 
-				if ($onFailure === null || is_bool($onFailure) && $onFailure) {
+				if ($onFailure === null) {
+					continue;
+				}
+
+				if (is_bool($onFailure) && $onFailure) {
 					throw $e;
 				}
 
