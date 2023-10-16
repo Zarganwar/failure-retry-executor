@@ -1,0 +1,22 @@
+{
+  "name": "zarganwar/failure-retry-executor",
+  "description": "Retry failed operations",
+  "homepage": "https://github.com/Zarganwar/failure-retry-executor",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Zarganwar\\FailureRetryExecutor\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Martin Jirasek",
+      "email": "jertin@seznam.cz"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

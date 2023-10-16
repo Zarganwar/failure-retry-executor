@@ -13,6 +13,15 @@ class FailureRetryExecutor
 
 	public const defaultMaxAttempts = 3;
 
+	/**
+	 * @param callable $command
+	 * @param int $maxAttempts
+	 * @param callable|bool|null $onFailure
+	 * @param callable|null $onSuccess
+	 * @return void
+	 * @throws RetryLimitExceededException
+	 * @throws Throwable
+	 */
 	public static function execute(
 		callable $command,
 		int $maxAttempts = self::defaultMaxAttempts,
